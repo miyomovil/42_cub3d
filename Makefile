@@ -9,6 +9,8 @@ SRCS 				= 	./srcs/read_map.c \
 						./srcs/matrix_utils.c \
 						./srcs/matrix_utils_2.c \
 						./srcs/init_window.c \
+						./srcs/key_manager.c \
+						./srcs/draw_utils.c \
 
 
 OBJS 				= ${SRCS:.c=.o}

@@ -6,7 +6,7 @@
 /*   By: antomart <antomart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/16 07:54:43 by antomart          #+#    #+#             */
-/*   Updated: 2020/07/13 13:17:42 by antomart         ###   ########.fr       */
+/*   Updated: 2020/07/15 13:04:39 by antomart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,13 @@
 # include <fcntl.h>
 # include "libft.h"
 # include "mlx.h"
+
+# define ESC 65307
+# define FORWARD 65362
+# define LEFT	65361
+# define BACKWARD 65364
+# define RIGHT 65363
+
 
 typedef	struct	s_cub3d
 {
@@ -59,16 +66,16 @@ typedef	struct	s_cub3d
 	int		mat_h;
 	int		mat_w;
 
-}				t_val;
+	void    *mlx;
+	void    *win;
 
-typedef struct  s_image
-{
-    void        *img;
-    char        *addr;
-    int         bits_per_pixel;
-    int         line_length;
-    int         endian;
-}               t_image;
+	void        *img;
+	char        *addr;
+	int         bits_per_pixel;
+	int         line_length;
+	int         endian;
+
+}				t_val;
 
 
 void			get_res(char *line, t_val *ptr);
@@ -92,5 +99,11 @@ void			tab_parse(char *line, t_val *ptr);
 void			tab_parse_2(char *line, t_val *ptr);
 void			space_parse(char *line, t_val *ptr);
 void			no_space_parse(t_val *ptr);
-void			init_window(t_val *ptr, t_image *img);
+void			init_window(t_val *ptr);
+void			my_mlx_pixel_put(t_val *ptr, int x, int y, int color);
+void			write_a_red_pixel(t_val *ptr);
+void			write_a_blue_pixel(t_val *ptr);
+void			write_a_white_pixel(t_val *ptr);
+void			write_a_green_pixel(t_val *ptr);
+int				key_manager(int keycode, t_val *ptr);
 #endif
