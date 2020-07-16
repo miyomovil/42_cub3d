@@ -6,7 +6,7 @@
 /*   By: antomart <antomart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/16 07:54:43 by antomart          #+#    #+#             */
-/*   Updated: 2020/07/15 13:04:39 by antomart         ###   ########.fr       */
+/*   Updated: 2020/07/16 10:48:31 by antomart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@
 # define LEFT	65361
 # define BACKWARD 65364
 # define RIGHT 65363
+# define SPACE 32
 
 
 typedef	struct	s_cub3d
@@ -101,9 +102,6 @@ void			space_parse(char *line, t_val *ptr);
 void			no_space_parse(t_val *ptr);
 void			init_window(t_val *ptr);
 void			my_mlx_pixel_put(t_val *ptr, int x, int y, int color);
-void			write_a_red_pixel(t_val *ptr);
-void			write_a_blue_pixel(t_val *ptr);
-void			write_a_white_pixel(t_val *ptr);
-void			write_a_green_pixel(t_val *ptr);
+void 			verLine_image(int x, int y0, int y1, t_val *ptr, int color);
 int				key_manager(int keycode, t_val *ptr);
 #endif
