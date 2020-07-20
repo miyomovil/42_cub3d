@@ -6,7 +6,7 @@
 /*   By: antomart <antomart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/23 10:51:17 by antomart          #+#    #+#             */
-/*   Updated: 2020/07/13 11:14:14 by antomart         ###   ########.fr       */
+/*   Updated: 2020/07/20 10:55:59 by antomart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void			enter_the_matrix(t_val *ptr)
 {
 	char *line;
 
-	ptr->mat_h = (ptr->line_count - 11);
+	ptr->mat_h = (ptr->line_count - 10);
 	ptr->map = malloc_map(ptr);
 	init_matrix_values(ptr);
 	ptr->map_read = open("maps/map.cub", O_RDONLY);
