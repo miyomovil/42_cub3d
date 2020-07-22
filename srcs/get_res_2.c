@@ -6,11 +6,16 @@
 /*   By: antomart <antomart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/23 08:10:21 by antomart          #+#    #+#             */
-/*   Updated: 2020/06/30 08:02:02 by antomart         ###   ########.fr       */
+/*   Updated: 2020/07/22 11:44:27 by antomart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
+
+unsigned long createRGB(int r, int g, int b)
+{   
+    return ((r & 0xff) << 16) + ((g & 0xff) << 8) + (b & 0xff);
+}
 
 void	get_path_spr(char *line, t_val *ptr)
 {
@@ -46,6 +51,8 @@ void	get_f_values(char *line, t_val *ptr)
 	ptr->f_value3str = ft_substr_1(line, ptr->c, ptr->d);
 	ptr->f_value_3 = ft_atoi(ptr->f_value3str);
 	printf("\n%d %d %d", ptr->f_value_1, ptr->f_value_2, ptr->f_value_3);
+	ptr->f_color = createRGB(ptr->f_value_1, ptr->f_value_2, ptr->f_value_3);
+	printf("\n %lx\n", ptr->f_color);
 }
 
 void	get_c_values(char *line, t_val *ptr)
@@ -76,6 +83,8 @@ void	get_c_values(char *line, t_val *ptr)
 	ptr->c_value3str = ft_substr_1(line, ptr->c, ptr->d);
 	ptr->c_value_3 = ft_atoi(ptr->c_value3str);
 	printf("\n%d %d %d", ptr->c_value_1, ptr->c_value_2, ptr->c_value_3);
+	ptr->c_color = createRGB(ptr->c_value_1, ptr->c_value_2, ptr->c_value_3);
+	printf("\n %lx\n", ptr->c_color);
 }
 
 void	get_res_2(char *line, t_val *ptr)

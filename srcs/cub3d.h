@@ -6,7 +6,7 @@
 /*   By: antomart <antomart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/16 07:54:43 by antomart          #+#    #+#             */
-/*   Updated: 2020/07/22 08:38:46 by antomart         ###   ########.fr       */
+/*   Updated: 2020/07/22 11:42:45 by antomart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,11 @@ typedef	struct	s_cub3d
 	char	*f_value1str;
 	char	*f_value2str;
 	char	*f_value3str;
+	unsigned long f_color;
 	char	*c_value1str;
 	char	*c_value2str;
 	char	*c_value3str;
+	unsigned long c_color;
 	int		f_value_1;
 	int		f_value_2;
 	int		f_value_3;
@@ -109,4 +111,5 @@ void			init_window(t_val *ptr);
 void			my_mlx_pixel_put(t_val *ptr, int x, int y, int color);
 void 			verLine_image(int x, int y0, int y1, t_val *ptr, int color);
 int				key_manager(int keycode, t_val *ptr);
+unsigned long	createRGB(int r, int g, int b);
 #endif
