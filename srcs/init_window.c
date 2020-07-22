@@ -6,7 +6,7 @@
 /*   By: antomart <antomart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/13 12:20:06 by antomart          #+#    #+#             */
-/*   Updated: 2020/07/16 10:47:17 by antomart         ###   ########.fr       */
+/*   Updated: 2020/07/22 08:40:32 by antomart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,9 @@ void	init_window(t_val *ptr)
 {
 	ft_printf("\n ptr->w = %d", ptr->w);
 	ft_printf("\n ptr->h = %d", ptr->h);
+	ft_printf("\n ptr->playx = %d", ptr->playx);
+	ft_printf("\n ptr->playy = %d", ptr->playy);
+	ft_printf("\n pos playx playy %c", ptr->map[ptr->playy][ptr->playx]);
     ptr->mlx = mlx_init();
     ptr->win = mlx_new_window(ptr->mlx, ptr->h, ptr->w, "cub3d");
 	

@@ -6,7 +6,7 @@
 /*   By: antomart <antomart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/16 07:54:43 by antomart          #+#    #+#             */
-/*   Updated: 2020/07/16 10:48:31 by antomart         ###   ########.fr       */
+/*   Updated: 2020/07/22 08:38:46 by antomart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,10 @@ typedef	struct	s_cub3d
 {
 	int		line_count;
 	int		map_read;
+
 	int		h;
 	int		w;
+
 	char	*n_path;
 	char	*s_path;
 	char	*w_path;
@@ -75,6 +77,9 @@ typedef	struct	s_cub3d
 	int         bits_per_pixel;
 	int         line_length;
 	int         endian;
+
+	int		playx;
+	int		playy;
 
 }				t_val;
 

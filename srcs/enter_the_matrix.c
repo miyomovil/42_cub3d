@@ -6,7 +6,7 @@
 /*   By: antomart <antomart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/23 10:51:17 by antomart          #+#    #+#             */
-/*   Updated: 2020/07/20 10:55:59 by antomart         ###   ########.fr       */
+/*   Updated: 2020/07/22 08:37:05 by antomart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,27 @@ void			exit_the_matrix(t_val *ptr)
 	printf("\n");
 	ptr->k = 0;
 	ptr->g = 0;
+	ptr->playx = 0;
+	ptr->playy = 0;
 	while (ptr->k < ptr->mat_h)
 	{
 		while (ptr->g < ptr->mat_w)
 		{
+			if ((ptr->map[ptr->k][ptr->g] == 'N')
+				|| (ptr->map[ptr->k][ptr->g] == 'W')
+					|| (ptr->map[ptr->k][ptr->g] == 'E')
+						|| (ptr->map[ptr->k][ptr->g] == 'S'))
+			{
+				ptr->playx = ptr->g;
+				ptr->playy = ptr->k;
+			}
 			if (ptr->map[ptr->k][ptr->g] != '1' &&
 					ptr->map[ptr->k][ptr->g] != '0' &&
 						ptr->map[ptr->k][ptr->g] != 'N' &&
-							ptr->map[ptr->k][ptr->g] != '2')
+							ptr->map[ptr->k][ptr->g] != 'W' &&
+								ptr->map[ptr->k][ptr->g] != 'S' &&
+									ptr->map[ptr->k][ptr->g] != 'E' &&
+										ptr->map[ptr->k][ptr->g] != '2')
 			{
 				ptr->map[ptr->k][ptr->g] = '9';
 				printf("%c ", ptr->map[ptr->k][ptr->g]);
